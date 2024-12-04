@@ -13,15 +13,16 @@ exports.getHistory = (palavraChave, callback) => {
 
         request.addParameter('palavraChave', TYPES.VarChar, `%${palavraChave}%`); // Define o parâmetro RM como um inteiro
 
-                request.on('row', columns => {
-            historias = {
-              id: columns[0].value,
-              historia: columns[1].value,
-              imagens: columns[2].value
-            };
+        const result = [];
+        request.on("row", (columns) => {
+          result.push({
+            id: columns[0].value,
+            historia: columns[1].value,
+            tema: columns[2].value
+          });
         });
 
-        request.on('requestCompleted', () => callback(null, historias)); // Retorna o aluno encontrado
+        request.on('requestCompleted', () => callback(null, result)); // Retorna o aluno encontrado
         connection.execSql(request);
     });
     connection.connect();

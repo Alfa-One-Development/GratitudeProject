@@ -8,30 +8,22 @@
   </head>
 
   <body>
-    <h1>Search Pokemon</h1>
-    <input
-      type="text"
-      id="historiaPalavraChave"
-      placeholder="DIGITE O NOME OU ID DO POKEMON"
-      onkeypress="init()"
-    />
-  </header>
-
-  <section>
-    <p id="loadingMessage" style="display: none">Loading...</p>
-    <div id="errorMessage" style="display: none"></div>
-
-    <div class="pokemon-inf" id="pokemonInfo" style="display: none">
-
-      <article>
-        <h2><text>ID: </text> <span id="pokemonId"></span></h2>
-        <article>
-        <img id="pokemonImage" src="" alt="Imagem del Pokemon" />
-        <p><strong>Order: </strong> <span id="pokemonOrder"></span> </p>
-      </article>
-
+    <div class="form-container">
+      <h2>Buscar História por Palavra-Chave</h2>
+      <div class="form-group">
+        <label for="userId">ID do Usuário:</label>
+        <input type="number" id="userId" placeholder="Digite o ID do usuário" />
+      </div>
+      <button class="fetch-user-btn" onclick="fetchUserById()">
+        Buscar Usuário
+      </button>
     </div>
-  </section>
+
+    <!-- Lista de Usuários -->
+    <div class="user-list" id="userList">
+      <h2>Lista de Usuários</h2>
+      <!-- Aqui serão listados os usuários -->
+    </div>
 
     <script src="script.js"></script>
   </body>
