@@ -1,13 +1,13 @@
 const historyURL = "http://localhost:3000/historias/palavrachave"
 
-async function fetchUsers() {
-  const palavraChaveInput = document.getElementById("userId");
-  const palavraChave = userIdInput.value.trim();
+async function searchHistory() {
+  const palavraChaveInput = document.getElementById("inputHistory");
+  const palavraChave = palavraChaveInput.value.trim();
+  const historyList = document.getElementById("historyList");
 
-  const historyList = document.getElementById("userList");
-  showLoading(historyList); // Exibe o spinner
+  historyList.innerHTML = `<h1>Histórias com "${palavraChave}":</h1>`;
 
-  const response = await fetch(`${historyURL}/${userId}`);
+  const response = await fetch(`http://localhost:3000/historias/palavrachave/${palavraChave}`);
   if (!response.ok) {
     alert("Erro ao buscar usuários.");
     return;
@@ -15,14 +15,15 @@ async function fetchUsers() {
 
   const historias = await response.json();
 
-  historias.innerHTML = "<h2>Lista de Usuários</h2>";
+  historias.innerHTML = "";
 
   historias.forEach((historia) => {
     const historiaItem = document.createElement("div");
     historiaItem.className = "user-item";
     historiaItem.innerHTML = `
       <div>
-        <p><strong>Nome:</strong> ${historia.historia}</p>
+        <h3>${historia.historia}</h3>
+        <img src="${historia.imagens}" />
       </div>
     `;
     historyList.appendChild(historiaItem);

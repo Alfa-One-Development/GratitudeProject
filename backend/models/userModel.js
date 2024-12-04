@@ -18,7 +18,7 @@ exports.getHistory = (palavraChave, callback) => {
           result.push({
             id: columns[0].value,
             historia: columns[1].value,
-            tema: columns[2].value
+            imagens: columns[2].value
           });
         });
 

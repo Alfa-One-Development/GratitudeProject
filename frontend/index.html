@@ -11,17 +11,16 @@
     <div class="form-container">
       <h2>Buscar História por Palavra-Chave</h2>
       <div class="form-group">
-        <label for="userId">ID do Usuário:</label>
-        <input type="number" id="userId" placeholder="Digite o ID do usuário" />
+        <label for="inputHistory">Palavra-Chave:</label>
+        <input type="text" id="inputHistory" placeholder="Digite sua Palavra-Chave" />
       </div>
-      <button class="fetch-user-btn" onclick="fetchUserById()">
-        Buscar Usuário
+      <button class="fetch-user-btn" onclick="searchHistory()">
+        Buscar História
       </button>
-    </div>
 
     <!-- Lista de Usuários -->
-    <div class="user-list" id="userList">
-      <h2>Lista de Usuários</h2>
+    <div class="user-list" id="historyList">
+      <h2></h2>
       <!-- Aqui serão listados os usuários -->
     </div>
 
