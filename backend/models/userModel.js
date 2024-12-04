@@ -1,14 +1,39 @@
 const createConnection = require("../db"); // Importa a função para criar a conexão com o banco de dados
 const { Request, TYPES } = require("tedious"); // Importa as classes necessárias do tedious
 
-// Função para buscar todos os usuários no banco de dados
-exports.getAllUsers = (callback) => {
+exports.getHistory = (palavraChave, callback) => {
+  const connection = createConnection();
+    connection.on('connect', err => {
+        if (err) return callback(err, null);
+
+        const query = `select * from Historias where historia like @palavraChave`; // Consulta SQL para buscar aluno por RM
+        const request = new Request(query, (err) => {
+            if (err) return callback(err, null);
+        });
+
+        request.addParameter('palavraChave', TYPES.VarChar, `%${palavraChave}%`); // Define o parâmetro RM como um inteiro
+
+                request.on('row', columns => {
+            historias = {
+              id: columns[0].value,
+              historia: columns[1].value,
+              imagens: columns[2].value
+            };
+        });
+
+        request.on('requestCompleted', () => callback(null, historias)); // Retorna o aluno encontrado
+        connection.execSql(request);
+    });
+    connection.connect();
+}
+
+exports.getMessage = (callback) => {
   const connection = createConnection(); // Cria a conexão com o banco de dados
   connection.on("connect", (err) => {
     if (err) {
       return callback(err, null); // Trata erros de conexão
     }
-    const query = `SELECT * FROM Users`; // SQL para buscar todas os usuários
+    const query = `SELECT TOP 1 * FROM MensagensCurtas ORDER BY NEWID()`; // SQL para buscar todas os usuários
     const request = new Request(query, (err, rowCount) => {
       if (err) {
         return callback(err, null); // Trata erros de execução da consulta
@@ -24,10 +49,8 @@ exports.getAllUsers = (callback) => {
     request.on("row", (columns) => {
       result.push({
         id: columns[0].value,
-        name: columns[1].value,
-        age: columns[2].value,
-        email: columns[3].value,
-        contact: columns[4].value,
+        mensagem: columns[1].value,
+        tema: columns[2].value
       });
     });
 
@@ -42,15 +65,16 @@ exports.getAllUsers = (callback) => {
   connection.connect(); // Inicia a conexão
 };
 
-exports.createUser = (data, callback) => {
+exports.createMessage = (data, callback) => {
   const connection = createConnection(); // Cria a conexão com o banco de dados
 
   connection.on("connect", (err) => {
     if (err) {
       return callback(err, null); // Trata erros de conexão
     }
-    // Consulta SQL para inserir um novo usuário
-    const query = `INSERT INTO Users (name,age,email,contact) VALUES (@name,@age,@email,@contact)`;
+
+    //! Consulta SQL para inserir um novo usuário
+    const query = `INSERT INTO MensagensCurtas VALUES (@mensagem, @tema)`; // SQL para inserir um novo usuário
 
     const request = new Request(query, (err) => {
       if (err) {
@@ -60,10 +84,8 @@ exports.createUser = (data, callback) => {
       }
     });
     // Adiciona os parâmetros necessários para a inserção
-    request.addParameter("name", TYPES.VarChar, data.name);
-    request.addParameter("age", TYPES.Int, data.age);
-    request.addParameter("email", TYPES.VarChar, data.email);
-    request.addParameter("contact", TYPES.VarChar, data.contact);
+    request.addParameter('mensagem', TYPES.NVarChar, data.mensagem);
+    request.addParameter('tema', TYPES.NVarChar, data.tema);
 
     connection.execSql(request); // Executa a consulta
   });

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gerenciamento de Usuários</title>
+  </head>
+
+  <body>
+    <h1>Search Pokemon</h1>
+    <input
+      type="text"
+      id="historiaPalavraChave"
+      placeholder="DIGITE O NOME OU ID DO POKEMON"
+      onkeypress="init()"
+    />
+  </header>
+
+  <section>
+    <p id="loadingMessage" style="display: none">Loading...</p>
+    <div id="errorMessage" style="display: none"></div>
+
+    <div class="pokemon-inf" id="pokemonInfo" style="display: none">
+
+      <article>
+        <h2><text>ID: </text> <span id="pokemonId"></span></h2>
+        <article>
+        <img id="pokemonImage" src="" alt="Imagem del Pokemon" />
+        <p><strong>Order: </strong> <span id="pokemonOrder"></span> </p>
+      </article>
+
+    </div>
+  </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

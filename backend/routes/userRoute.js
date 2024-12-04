@@ -2,17 +2,10 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 
-router.get("/users", userController.getUser);
+router.get('/historias/palavrachave/:palavrachave', userController.getHistory); 
 
-// Rota POST para criar um novo usuário 
-router.post('/users', userController.createUser); 
+router.get('/mensagem', userController.getMessage); 
 
-// Rota PUT para atualizar um usuário existente 
-router.put('/users/:id', userController.updateUser); 
- 
-// Rota DELETE para remover um usuário 
-router.delete('/users/:id', userController.deleteUser);
-
-router.get('/users/:id', userController.getUserById)
+router.post('/mensagem', userController.createMessage); 
 
 module.exports = router;
