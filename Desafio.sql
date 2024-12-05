@@ -1,5 +1,5 @@
-create database Desafio
-use Desafio
+create database DesafioGratitude
+use DesafioGratitude
 
 create table MensagensCurtas(
 id int primary key identity,
