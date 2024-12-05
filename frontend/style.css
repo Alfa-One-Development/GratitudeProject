@@ -53,6 +53,12 @@ button {
   border-radius: 0.5vw;
 }
 
+input {
+  background-color: #000723; /* Verde */
+  color: rgb(203, 203, 203);
+  border-radius: 0.5vw;
+}
+
 main {
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -106,7 +112,7 @@ main {
     margin: auto;
 
     img {
-      width: 30%%;
+      width: 30%;
     }
   }
 
