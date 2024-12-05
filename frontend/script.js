@@ -29,20 +29,28 @@ async function searchHistory() {
 }
 
 async function searchMessage() {
-  const userDetails = document.getElementById("userDetails");
+  const messageList = document.getElementById("messageList");
+  messageList.innerHTML = `<h1>Mensagem do dia</h1>`;
 
-  try {
-    const response = await fetch(`http://localhost:3000/mensagem`);
-    
-      const mensagem = await response.json();
-      
-      userDetails.innerHTML = `
-        <h2>Detalhes do Usuário</h2>
-        <p><strong>ID:</strong> ${mensagem.mensagem}</p>
-        <p><strong>Nome:</strong> ${mensagem.tema}</p>
-      `;
-    } catch (error) {
-    alert("Erro ao buscar usuário. Verifique sua conexão.");
-    userDetails.innerHTML = "";
+  const response = await fetch(`http://localhost:3000/mensagem`);
+  if (!response.ok) {
+    alert("Erro ao buscar mensagens.");
+    return;
   }
+
+  const mensagens = await response.json();
+
+  mensagens.innerHTML = "";
+
+  mensagens.forEach((mensagem) => {
+    const mensagemItem = document.createElement("div");
+    mensagemItem.className = "user-item";
+    mensagemItem.innerHTML = `
+      <div>
+        <h3>${mensagem.mensagem}</h3>
+        <h3>${mensagem.tema}</h3>
+      </div>
+    `;
+    messageList.appendChild(mensagemItem);
+  });
 }
