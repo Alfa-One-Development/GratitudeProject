@@ -6,8 +6,8 @@ server: 'localhost',  // Nome do servidor (pode ser 'localhost' ou um endereço 
     authentication: { 
         type: 'default', // Tipo de autenticação (no caso, autenticando com nome de usuário e senha) 
         options: { 
-            userName: 'TalionElessar',    // Nome do usuário do banco de dados 
-            password: 'TalionElessar2007'  // Senha do banco de dados 
+            userName: 'testesql',    // Nome do usuário do banco de dados 
+            password: '12345678'  // Senha do banco de dados 
         } 
     }, 
     options: { 
