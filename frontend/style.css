@@ -1,169 +1,190 @@
 /* Estilo geral */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items:start;
-    padding: 1.75vw;
-    background-image: url('rambo.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: #333;
-  }
+  font-family: Arial, sans-serif; /* Substitua por sua fonte preferida */
+  margin: 0;
+  padding: 10px;
+  background-color: #e1e1e1; /* Cor de fundo principal */
+  color: #333; /* Cor do texto principal */
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border: solid rgb(186, 186, 186);
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  height: auto;
+}
+
+/* Layout em duas colunas */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Caixas */
+.caixa {
+  background-color: #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.caixa-preta {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Títulos e texto */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+/* Botões */
+button {
+  background-color: #000723; /* Verde */
+  color: rgb(203, 203, 203);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #000723;
+  padding: 20px;
+  text-align: center;
+  color: rgb(186, 186, 186);
+margin-top: 10px;
+}
+
+a {
+
+color: #000723;
+text-decoration: none;
+text-shadow: #333;
+text-align: center;
+margin-bottom: 10px;
+
+
+}
+
+footer a {
+
+color: #d0d0d0;
+text-decoration: none;
+text-shadow: #333;
+text-align: center;
+margin-bottom: 10px;
+
+}
+
+h1 {
+
+  color: #000723;
+  display: flex;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+.logo {
+
+width: 6vw;
+height: 6vw;
+border-radius: 10px;
+border-style:initial;
+margin-left: 10px;
+
+}
+
+
+header {
+
+display: flex;
+flex-direction: row;
+align-items: center;
+background-color: #000723;
+width: 90%;
+color: #d0d0d0;
+padding: 10px;
+border-radius: 10px;
+}
+
+header h1{
+
+ align-items: center;
+ color: #d0d0d0;
+ margin-left: 450px;
   
-  h1 {
-    color: #444;
-    margin-bottom: 20px;
-  }
-  
-  /* Contêiner geral */
-  .form-container,
-  .user-list {
-    max-width: 30vw;
-    width: 100%;
-    margin-top: 20px;
-    padding: 1.5vw;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    opacity: 75%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Formulários */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 90%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  /* Botões */
-  button {
-    padding: 10px 15px;
-    margin-top: 10px;
-    border: none;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  button:hover {
-    opacity: 0.9;
-  }
-  
-  .add-user-btn,
-  .fetch-user-btn {
-    background-color: #28a745;
-  }
-  
-  .update-user-btn {
-    background-color: #007bff;
-  }
-  
-  .delete-user-btn {
-    background-color: #dc3545;
-    margin-left: 10px;
-  }
-  
-  /* Lista de usuários */
-  .user-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .user-item:last-child {
-    border-bottom: none;
-  }
-  
-  /* Detalhes do usuário */
-  .user-details {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; /* Azul claro para destaque */
-    opacity: 75%;
-    color: #333;
-    font-size: 14px;
-  }
-  
-  /* Botões na lista de usuários */
-  .user-item button {
-    margin-top: 5px;
-    margin-right: 5px;
-    padding: 8px 12px;
-  }
-  
-  /* Estilo adicional para títulos */
-  h2 {
-    color: #444;
-    text-align: center;
-  }
-  
-  
-  /* Estilo para um spinner de carregamento */
-  .spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #007bff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin 1s linear infinite;
-    margin: auto;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .spinner.show {
-    opacity: 1;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
     }
-    100% {
-      transform: rotate(360deg);
+
+
+    p {
+
+      background-color: #88888836;
+      border-radius: 10px;
+      padding: 30px;
+
     }
+
+    .Mensagemhead {
+
+width: 100%;
+
+    }
+
+    .Gratidaohead h1{
+
+margin-left: 37%;
+
+    }
+
+    .Grupohead h1 {
+
+margin-left: 340px;
+
+    }
+
+  .Homhead h1 {
+
+margin-left: 487px;
+
   }
-  
-  /* Responsividade */
-  @media (max-width: 600px) {
-    .form-container,
-    .user-list {
-      width: 100%;
+
+  ul {
+
+      background-color: #88888836;
+      border-radius: 10px;
+      padding: 30px;
+
     }
-  
-    .user-item {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    button {
-      width: 100%;
-      margin: 5px 0;
-    }
-  
-    .add-user-btn,
-    .fetch-user-btn {
-      width: 100%;
-    }
-  }
+
+    .Ha a {
+
+      color: #000723;
+      text-decoration: none;
+      text-shadow: #333;
+      text-align: center;
+      margin-bottom: 10px;
+      background-color: #99999947;
+      justify-items: center;
+
+      
+      
+      }
+      
