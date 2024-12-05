@@ -18,29 +18,6 @@ body {
 }
 
 /* Layout em duas colunas */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.column {
-  flex: 1;
-  padding: 20px;
-}
-
-/* Caixas */
-.caixa {
-  background-color: #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.caixa-preta {
-  background-color: #333;
-  color: #fff;
-}
 
 /* Títulos e texto */
 h2 {
