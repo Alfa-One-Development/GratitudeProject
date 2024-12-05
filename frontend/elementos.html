@@ -10,36 +10,32 @@
 
 <body>
   // Código para Input e Botão para Mensagens:
-  <div class="form-container">
-    <h2>Buscar História por Palavra-Chave</h2>
-    <div class="form-group">
-      <label for="inputHistory">Palavra-Chave:</label>
-      <input type="text" id="inputHistory" placeholder="Digite sua Palavra-Chave" />
-    </div>
-    <button class="fetch-user-btn" onclick="searchHistory()">
-      Buscar História
-    </button>
 
-    <!-- Lista de Usuários -->
-    <div class="user-list" id="historyList">
-      <h2></h2>
-      <!-- Aqui serão listados os usuários -->
-    </div>
+  <label for="inputHistory">Palavra-Chave:</label>
+  <input type="text" id="inputHistory" placeholder="Digite sua Palavra-Chave" />
+
+  <button onclick="searchHistory()">
+    Buscar História
+  </button>
+
+  <!-- Lista de Usuários -->
+  <div id="historyList">
+    <!-- Aqui serão listados os usuários -->
   </div>
 
   // Código para Botão de Mensagens:
 
-  <div class="form-container">
-    <h2>Buscar Usuário por ID</h2>
-    <button class="fetch-user-btn" onclick="searchMessage()">
-      Buscar Usuário
-    </button>
+  <h2>Gerar Mensagem</h2>
+  <button onclick="searchMessage()">
+    Buscar História
+  </button>
+
+  <!-- Lista de Usuários -->
+  <div id="messageList">
+    <!-- Aqui serão listados os usuários -->
   </div>
 
-  <!-- Detalhes do Usuário -->
-  <div class="user-details" id="userDetails"></div>
-
-      <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
