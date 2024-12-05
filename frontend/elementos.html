@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  // Código para Input e Botão para Mensagens:
+  <!-- Código para Input e Botão para Mensagens: -->
 
   <label for="inputHistory">Palavra-Chave:</label>
   <input type="text" id="inputHistory" placeholder="Digite sua Palavra-Chave" />
@@ -23,7 +23,8 @@
     <!-- Aqui serão listados os usuários -->
   </div>
 
-  // Código para Botão de Mensagens:
+
+  <!-- Código para Botão de Mensagens: -->
 
   <h2>Gerar Mensagem</h2>
   <button onclick="searchMessage()">
@@ -34,6 +35,17 @@
   <div id="messageList">
     <!-- Aqui serão listados os usuários -->
   </div>
+
+
+  <!-- Código para Adicionar Mensagens-->
+  <h2>Adicionar Mensagem de Gratidão:</h2>
+  <label for="mensagem">Mensagem:</label>
+  <input type="text" id="mensagem" placeholder="Digite sua Mensagem" />
+
+  <label for="tema">Tema da Mensagem:</label>
+  <input type="text" id="tema" placeholder="Digite o Tema" />
+
+  <button onclick="createMessage()">Adicionar Usuário</button>
 
   <script src="script.js"></script>
 </body>
