@@ -54,3 +54,30 @@ async function searchMessage() {
     messageList.appendChild(mensagemItem);
   });
 }
+
+async function createMessage() {
+  const mensagemInput = document.getElementById("mensagem");
+  const temaInput = document.getElementById("tema");
+
+  const mensagem = mensagemInput.value.trim();
+  const tema = temaInput.value.trim();
+
+  // Validação dos campos
+
+  const response = await fetch(`http://localhost:3000/mensagem`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ mensagem, tema }),
+  });
+
+  if (response.ok) {
+    alert("Usuário adicionado com sucesso!");
+    // Limpa os campos do formulário
+    mensagemInput.value = "";
+    temaInput.value = "";
+
+  } else {
+    const error = await response.json();
+    alert(`Erro ao adicionar usuário: ${error.message}`);
+  }
+}
