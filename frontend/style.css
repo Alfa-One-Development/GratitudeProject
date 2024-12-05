@@ -1,6 +1,6 @@
 /* Estilo geral */
 body {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Substitua por sua fonte preferida */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; /* Substitua por sua fonte preferida */
   padding: 10px;
   background-color: #e1e1e1; /* Cor de fundo principal */
   color: #333; /* Cor do texto principal */
@@ -12,49 +12,121 @@ body {
   border: solid rgb(186, 186, 186);
   margin-left: 1vw;
   margin-right: 1vw;
-  border-radius: 10px;
+  border-radius: 0.5vw;
+
   height: auto;
   width: auto;
 }
 
-header, footer {
-
+header,
+footer {
   display: flex;
   flex-direction: row;
 
   justify-content: space-around;
   background-color: #000723;
-  width: 90%;
+  width: 95%;
   color: #d0d0d0;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 0.5vw;
 
-  h1, a {
+  h1,
+  a {
     color: #d0d0d0;
   }
 
-nav {
-  display: flex;
-  flex-direction: column;
-}
-
-img {
-  width: 7.5%;
-  border-radius: 0.5vw;
-}
-
+  nav {
+    display: flex;
+    flex-direction: column;
   }
+
+  img {
+    width: 7.5%;
+    border-radius: 0.5vw;
+  }
+}
 
 /* Botões */
 button {
   background-color: #000723; /* Verde */
   color: rgb(203, 203, 203);
-  padding: 15px 32px;
+  border-radius: 0.5vw;
+}
+
+main {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  width: 95%;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border-radius: 15px;
+
+  .history {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid rgb(186, 186, 186);
+    border-left: none;
+    border-right: none;
+    border-radius: 0.5vw;
+
+    margin-bottom: 1vw;
+    h3 {
+      width: 70%;
+    }
+    img {
+      width: 20%;
+      border-radius: 2vw;
+    }
+  }
+
+  article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid rgb(186, 186, 186);
+    border-radius: 0.5vw;
+    margin-bottom: 1vw;
+    padding: 1vw;
+
+    .gerar {
+      margin-bottom: 1vw;
+    }
+
+    img {
+      width: 20%;
+      border-radius: 2vw;
+      padding: 1vw;
+    }
+  }
+  
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+
+    img {
+      width: 30%%;
+    }
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

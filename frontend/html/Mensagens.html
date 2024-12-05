@@ -1,31 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<DOCTYPE html>
-<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagens de Gratidão</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
 </head>
+
 <body>
-    <header class="Mensagemhead">
-        <div class="menu">&#9776;</div>
-        <img class="logo" src="Logo - G1.png" alt="" />
-        <h1>Mensagens
-        </h1>
+    <header>
+
+        <img class="logo" src="../assets/Logo - G1.png" alt="" />
+        <h1>Mensagens de Gratidão</h1>
+        <nav>
+            <a class="Ha" href="../index.html">Homepage</a>
+            <a class="Ha" href="Gratidão.html">Gratidão</a>
+            <a class="Ha" href="Thanksgiving.html">Ação de Graças</a>
+            <a class="Ha" href="Histórias.html">Histórias Inspiradoras</a>
+            <a class="Ha" href="Grupo.html">Grupo</a>
+        </nav>
+
     </header>
 
     <main>
-        <button>Clique Aqui</button>
-        <p>Use o botão para gerar uma mensagem de gratidão!</p>
+        <article>
+            <h2>A gratidão pode mudar seu dia, que tal ler uma mensagem de gratidão para começar o dia de forma
+                positiva? Quem sabe mandar para alguem especial? Ou talvez apenas refletir sobre?</h2>
+            <img src="../assets/gratidao.jpg">
+        </article>
+
+        <!-- Código para Botão de Mensagens: -->
+
+        <article>
+            <div>
+                <h2>Gerar Mensagem:</h2>
+                <button class="gerar" onclick="searchMessage()">
+                    Gerar
+                </button>
+            </div>
+            <!-- Lista de Usuários -->
+            <div id="messageList">
+                <!-- Aqui serão listados os usuários -->
+            </div>
+        </article>
+
+        <article>
+            <!-- Código para Adicionar Mensagens-->
+            <h2>Adicionar Mensagem de Gratidão:</h2>
+            <h3><label for="mensagem">Mensagem:</label></h3>
+            <input type="text" id="mensagem" placeholder="Digite sua Mensagem" />
+
+            <h3><label for="tema">Tema da Mensagem:</label></h3>
+            <input type="text" id="tema" placeholder="Digite o Tema" />
+
+            <button onclick="createMessage()">Enviar</button>
+        </article>
     </main>
-    <a href="Homepage.html">Volte pra Homepage</a>
 
-</main>
-
-<footer>
-<a href="Grupo.html">Alpha One Development</a>
-
-</footer>
+    <footer>
+        <p>Alpha One Development</p>
+    </footer>
 </body>
+
 </html>

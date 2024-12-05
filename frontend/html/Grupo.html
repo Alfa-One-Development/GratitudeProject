@@ -1,39 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Minha Página</title>
-        <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body class="Grupobo">
-        <header class="Grupohead">
-            <div class="menu">&#9776;</div>
-            <img class="logo" src="Logo - G1.png" alt="" />
-            <H1>Grupo 1 (Alpha One Development)</H1>
-        </header>
-        <img src="imagem-slide.jpg" alt="foto do grupo"
-        <main>
-            <h2>Integrantes</h2>
-            
-            <center>
-                <h2>Felipe Cagnin <br></h2>
-                <h2><a class="Ha" href="beson.html">Murilo Besson <br></h2>
-                <h2><a class="Ha" href="murilo.html">Murilo Correia <br></h2>
-                <h2><a class="Ha" href="vitor.html">Vitor Hugo <br></h2>
-                <h2><a class="Ha" href="william.html">William Magno <br></h2>
-              </center>
-            
-        </main>
-        <a href="Homepage.html">Volte pra Homepage</a>
-    </center>
-    </div>
-    </main>
-    
+  <head>
+    <title>Minha Página</title>
+    <link rel="stylesheet" href="../style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../script.js"></script>
+  </head>
+
+  <body onload="showSlides(slideIndex);">
+    <header>
+      <img class="logo" src="../assets/Logo - G1.png" alt="" />
+      <h1>Grupo</h1>
+      <nav>
+        <a class="Ha" href="../index.html">Homepage</a>
+        <a class="Ha" href="Gratidão.html">Gratidão</a>
+        <a class="Ha" href="Thanksgiving.html">Ação de Graças</a>
+        <a class="Ha" href="Mensagens.html">Mensagens de Gratidão</a>
+        <a class="Ha" href="Histórias.html">Histórias Inspiradoras</a>
+      </nav>
+    </header>
+
+   <!-- Slideshow container -->
+<main>
+
+    <!-- Full-width images with number and caption text -->
+    <article class="mySlides fade">
+      <img src="../assets/GroupPhoto.jpeg" style="width:50%">
+    </article>
+  
+    <article class="mySlides fade">
+      <img src="../assets/felipe.jpeg">
+    </article>
+  
+    <article class="mySlides fade">
+      <img src="../assets/besson.jpeg">
+    </article>
+
+    <article class="mySlides fade">
+        <img src="../assets/correia.jpeg">
+      </article>
+
+      <article class="mySlides fade">
+        <img src="../assets/vitorhugo.jpeg">
+      </article>
+
+      <article class="mySlides fade">
+        <img src="../assets/william.jpeg">
+      </article>
+  
+    <article>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </article>
+
+  </main>
+
     <footer>
-    <a href="Grupo.html">Alpha One Development</a>
-   
+      <p>Alpha One Development</p>
     </footer>
-    </body>
-    </html>
+  </body>
+</html>

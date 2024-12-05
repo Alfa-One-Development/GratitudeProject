@@ -19,7 +19,7 @@ async function searchHistory() {
     const historiaItem = document.createElement("div");
     historiaItem.className = "user-item";
     historiaItem.innerHTML = `
-      <div>
+      <div class = "history">
         <h3>${historia.historia}</h3>
         <img src="${historia.imagens}" />
       </div>
@@ -30,7 +30,7 @@ async function searchHistory() {
 
 async function searchMessage() {
   const messageList = document.getElementById("messageList");
-  messageList.innerHTML = `<h1>Mensagem do dia</h1>`;
+  messageList.innerHTML = `<h1>Mensagem de Inspiração:</h1>`;
 
   const response = await fetch(`http://localhost:3000/mensagem`);
   if (!response.ok) {
@@ -47,8 +47,8 @@ async function searchMessage() {
     mensagemItem.className = "user-item";
     mensagemItem.innerHTML = `
       <div>
-        <h3>${mensagem.mensagem}</h3>
-        <h3>${mensagem.tema}</h3>
+        <h3>${mensagem.mensagem}!</h3>
+        <h3>Tema: ${mensagem.tema}</h3>
       </div>
     `;
     messageList.appendChild(mensagemItem);
@@ -80,4 +80,33 @@ async function createMessage() {
     const error = await response.json();
     alert(`Erro ao adicionar usuário: ${error.message}`);
   }
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
